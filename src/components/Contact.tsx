@@ -88,10 +88,14 @@ export default function Contact() {
                   placeholder="Cum te putem ajuta?"
                 />
               </div>
-              <button className="w-full py-4 bg-brand-primary text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:glow-primary transition-all">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-4 bg-brand-primary text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:glow-primary hover-glow-primary transition-all"
+              >
                 {CONTENT.contact.form.submit}
                 <Send size={18} />
-              </button>
+              </motion.button>
             </form>
           </motion.div>
         </div>

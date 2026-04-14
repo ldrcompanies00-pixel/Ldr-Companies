@@ -48,8 +48,9 @@ export default function Header() {
               href={item.href}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05, color: "var(--color-brand-primary)" }}
               transition={{ delay: index * 0.1 }}
-              className="text-sm font-medium text-white/70 hover:text-brand-primary transition-colors"
+              className="text-sm font-medium text-white/70 transition-colors"
             >
               {item.name}
             </motion.a>
@@ -57,7 +58,9 @@ export default function Header() {
           <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="px-6 py-2 bg-brand-primary text-black font-bold rounded-full text-sm hover:glow-primary transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-2 bg-brand-primary text-black font-bold rounded-full text-sm hover:glow-primary hover-glow-primary transition-all"
           >
             {CONTENT.nav.cta}
           </motion.button>

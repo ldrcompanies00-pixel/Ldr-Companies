@@ -29,6 +29,8 @@ export default function Portfolio() {
           <motion.button 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             viewport={{ once: true }}
             className="px-8 py-4 border border-white/10 rounded-full font-bold hover:bg-white hover:text-black transition-all"
           >
@@ -55,9 +57,12 @@ export default function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                 <span className="text-brand-primary text-sm font-bold mb-2">{project.category}</span>
                 <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                <button className="flex items-center gap-2 text-white font-medium hover:text-brand-primary transition-colors">
+                <motion.button 
+                  whileHover={{ x: 5 }}
+                  className="flex items-center gap-2 text-white font-medium hover:text-brand-primary transition-colors"
+                >
                   Detalii Proiect <ExternalLink size={18} />
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           ))}

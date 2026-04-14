@@ -46,9 +46,12 @@ export default function Blog() {
               <p className="text-white/60 mb-6 leading-relaxed">
                 {post.excerpt}
               </p>
-              <button className="flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all">
+              <motion.button 
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all"
+              >
                 Citește Mai Mult <ArrowRight size={18} />
-              </button>
+              </motion.button>
             </motion.div>
           ))}
         </div>

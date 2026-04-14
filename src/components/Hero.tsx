@@ -47,13 +47,21 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group px-8 py-4 bg-brand-primary text-black font-bold rounded-full flex items-center gap-2 hover:glow-primary transition-all">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group px-8 py-4 bg-brand-primary text-black font-bold rounded-full flex items-center gap-2 hover:glow-primary hover-glow-primary transition-all"
+          >
             {CONTENT.hero.ctaPrimary}
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all">
+          </motion.button>
+          <motion.button 
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-full transition-all"
+          >
             {CONTENT.hero.ctaSecondary}
-          </button>
+          </motion.button>
         </motion.div>
       </div>
 

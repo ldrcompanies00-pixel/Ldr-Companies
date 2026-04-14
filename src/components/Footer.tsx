@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Rocket, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
 import { CONTENT } from '../constants';
 
@@ -12,10 +13,34 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="#" className="text-white/40 hover:text-brand-primary transition-colors"><Instagram size={20} /></a>
-            <a href="#" className="text-white/40 hover:text-brand-primary transition-colors"><Facebook size={20} /></a>
-            <a href="#" className="text-white/40 hover:text-brand-primary transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="text-white/40 hover:text-brand-primary transition-colors"><Twitter size={20} /></a>
+            <motion.a 
+              href="#" 
+              whileHover={{ scale: 1.2, color: "var(--color-brand-primary)" }}
+              className="text-white/40 transition-colors"
+            >
+              <Instagram size={20} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              whileHover={{ scale: 1.2, color: "var(--color-brand-primary)" }}
+              className="text-white/40 transition-colors"
+            >
+              <Facebook size={20} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              whileHover={{ scale: 1.2, color: "var(--color-brand-primary)" }}
+              className="text-white/40 transition-colors"
+            >
+              <Linkedin size={20} />
+            </motion.a>
+            <motion.a 
+              href="#" 
+              whileHover={{ scale: 1.2, color: "var(--color-brand-primary)" }}
+              className="text-white/40 transition-colors"
+            >
+              <Twitter size={20} />
+            </motion.a>
           </div>
         </div>
         

@@ -48,18 +48,20 @@ export default function Services() {
             const Icon = iconMap[service.id];
             const isActive = activeService === service.id;
             return (
-              <button
+              <motion.button
                 key={service.id}
                 onClick={() => setActiveService(service.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`flex items-center gap-3 px-6 py-3 rounded-full font-bold transition-all ${
                   isActive 
-                    ? 'bg-brand-primary text-black glow-primary' 
+                    ? 'bg-brand-primary text-black glow-primary hover-glow-primary' 
                     : 'bg-white/5 text-white/60 hover:bg-white/10 border border-white/10'
                 }`}
               >
                 <Icon size={20} />
                 {service.title}
-              </button>
+              </motion.button>
             );
           })}
         </div>
@@ -105,14 +107,17 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <button className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
+                <motion.button 
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
                   index === 1 
-                    ? 'bg-brand-primary text-black hover:glow-primary' 
+                    ? 'bg-brand-primary text-black hover:glow-primary hover-glow-primary' 
                     : 'bg-white/5 border border-white/10 hover:bg-white/10'
                 }`}>
                   Alege Planul
                   <ArrowRight size={18} />
-                </button>
+                </motion.button>
               </motion.div>
             ))}
           </AnimatePresence>
